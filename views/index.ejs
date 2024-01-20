@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/addTask" method="post">
+        <label for="task">Add New task</label>
+        <input type="text" name="task" id="task">
+        <input type="submit" value="add task">
+    </form>
+
+
+    <form action="/deleteTasks" method="post">
+        <% for (let index = 0; index < tasks.length; index++) { %>
+          <div>
+            <input type="checkbox" name="items[]" id="<%= tasks[index] %>" value="<%= tasks[index] %>">
+            <label for="<%= tasks[index] %>"><%= tasks[index] %></label>
+          </div>
+        <% } %>
+        <input type="submit" value="Delete">
+    </form>
+      
+ 
+      
+         
+     
+
+</body>
+</html>
